@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accès restreint</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      margin-top: 15%;
+    }
+    input, button {
+      background: #222;
+      border: 1px solid #555;
+      color: #eee;
+      padding: 8px;
+      margin: 5px;
+    }
+    #secret {
+      display: none;
+      margin-top: 40px;
+      font-size: 18px;
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Identification requise</h1>
+  <p>Entrez la séquence d’accès :</p>
+
+  <input type="password" id="password" placeholder="*******">
+  <button onclick="verifier()">Soumettre</button>
+
+  <div id="secret">
+    <h2>Accès accordé</h2>
+    <p>Le contenu était là depuis le début, mais tu ne pouvais pas le voir.</p>
+  </div>
+
+  <script>
+    function verifier() {
+      const mdp = document.getElementById("password").value;
+      if (mdp === "FK-506") { // mot de passe
+        document.getElementById("secret").style.display = "block";
+      } else {
+        alert("Accès refusé. Essaie encore.");
+      }
+    }
+  </script>
+</body>
+</html>
