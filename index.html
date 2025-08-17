@@ -18,12 +18,6 @@
       padding: 8px;
       margin: 5px;
     }
-    #secret {
-      display: none;
-      margin-top: 40px;
-      font-size: 18px;
-      color: #0f0;
-    }
   </style>
 </head>
 <body>
@@ -33,16 +27,11 @@
   <input type="password" id="password" placeholder="*******">
   <button onclick="verifier()">Soumettre</button>
 
-  <div id="secret">
-    <h2>Accès accordé</h2>
-    <p>Le contenu était là depuis le début, mais tu ne pouvais pas le voir.</p>
-  </div>
-
   <script>
     function verifier() {
       const mdp = document.getElementById("password").value;
-      if (mdp === "FK-506") { // mot de passe
-        document.getElementById("secret").style.display = "block";
+      if (mdp === "FK-506") {
+        window.location.href = "secret.html"; // redirection
       } else {
         alert("Accès refusé. Essaie encore.");
       }
